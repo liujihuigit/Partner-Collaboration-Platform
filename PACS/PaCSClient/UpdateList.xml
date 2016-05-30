@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="gb2312"?>
+<AutoUpdater>
+  <description>Application autoUpdate</description>
+  <Updater>
+	<Url>http://109.116.6.7/-=PaCS=-/</Url>
+	<LastUpdateTime>2014-09-05</LastUpdateTime>
+  </Updater>
+  <Application applicationId="PaCSClient">
+    <EntryPoint>PaCSClient.exe</EntryPoint>
+    <Location>.</Location>
+	<Version>1.0.0.0</Version>
+  </Application>
+  <Files>
+
+    <File Ver="1.0.0.00005" Name="MetalMask.dll" />
+    <File Ver="1.0.0.00006" Name="PaCSClientMain.exe" />
+    <File Ver="1.0.0.00009" Name="PaCSTools.dll" />
+    <File Ver="1.0.0.00018" Name="Toner.dll" />
+    <File Ver="1.0.0.00000" Name="PCBCode.dll" />
+
+  </Files>
+</AutoUpdater>

@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4CA73132-C097-42A3-B9F7-FD3629A8CA54}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SecuLabel</RootNamespace>
+    <AssemblyName>SecuLabel</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\punish version\PaCS\PaCSFiles\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BarcodeGr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarcodeGr.Designer.cs">
+      <DependentUpon>BarcodeGr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dataSet.cs" />
+    <Compile Include="FaLiao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FaLiao.Designer.cs">
+      <DependentUpon>FaLiao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GridCheckMarksSelection.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Frame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frame.Designer.cs">
+      <DependentUpon>Frame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
+    <Compile Include="HistoryGiGr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoryGiGr.Designer.cs">
+      <DependentUpon>HistoryGiGr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IssueAssy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IssueAssy.Designer.cs">
+      <DependentUpon>IssueAssy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterInfo.Designer.cs">
+      <DependentUpon>MasterInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialGi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialGi.Designer.cs">
+      <DependentUpon>MaterialGi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialRequest.Designer.cs">
+      <DependentUpon>MaterialRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialsUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialsUpload.Designer.cs">
+      <DependentUpon>MaterialsUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReqListVendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReqListVendor.Designer.cs">
+      <DependentUpon>ReqListVendor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RequestList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequestList.Designer.cs">
+      <DependentUpon>RequestList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptSecu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptSecu.Designer.cs">
+      <DependentUpon>rptSecu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecuReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecuReport.Designer.cs">
+      <DependentUpon>SecuReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecuStockCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecuStockCheck.Designer.cs">
+      <DependentUpon>SecuStockCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SsdpInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SsdpInput.Designer.cs">
+      <DependentUpon>SsdpInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockQuery.Designer.cs">
+      <DependentUpon>StockQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VendorInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VendorInput.Designer.cs">
+      <DependentUpon>VendorInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VendorSelfCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VendorSelfCheck.Designer.cs">
+      <DependentUpon>VendorSelfCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="xrpReqList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="xrpReqList.Designer.cs">
+      <DependentUpon>xrpReqList.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BarcodeGr.resx">
+      <DependentUpon>BarcodeGr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FaLiao.resx">
+      <DependentUpon>FaLiao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frame.resx">
+      <DependentUpon>Frame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoryGiGr.resx">
+      <DependentUpon>HistoryGiGr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IssueAssy.resx">
+      <DependentUpon>IssueAssy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterInfo.resx">
+      <DependentUpon>MasterInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialGi.resx">
+      <DependentUpon>MaterialGi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialRequest.resx">
+      <DependentUpon>MaterialRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialsUpload.resx">
+      <DependentUpon>MaterialsUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReqListVendor.resx">
+      <DependentUpon>ReqListVendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RequestList.resx">
+      <DependentUpon>RequestList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptSecu.resx">
+      <DependentUpon>rptSecu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecuReport.resx">
+      <DependentUpon>SecuReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecuStockCheck.resx">
+      <DependentUpon>SecuStockCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SsdpInput.resx">
+      <DependentUpon>SsdpInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockQuery.resx">
+      <DependentUpon>StockQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VendorInput.resx">
+      <DependentUpon>VendorInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VendorSelfCheck.resx">
+      <DependentUpon>VendorSelfCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xrpReqList.resx">
+      <DependentUpon>xrpReqList.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Xerox2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PaCsTools\PaCSTools.csproj">
+      <Project>{2ed73d9c-6ad9-4f49-8aed-605e2c765ad3}</Project>
+      <Name>PaCSTools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

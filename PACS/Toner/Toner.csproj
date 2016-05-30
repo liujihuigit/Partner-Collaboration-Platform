@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E618186D-FE4D-4F2D-A8E4-28AD33769F7F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Toner</RootNamespace>
+    <AssemblyName>Toner</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\punish version\PaCS\PaCSFiles\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.CodeParser.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v14.1.UI, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Snap.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Snap.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v14.1.UI, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.1.Extensions, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v14.1.UI, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.1.Wizard, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v14.1.Win, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v14.1.Extensions, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BatchScrap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BatchScrap.Designer.cs">
+      <DependentUpon>BatchScrap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppendScan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppendScan.Designer.cs">
+      <DependentUpon>AppendScan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarryOutDocNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarryOutDocNo.Designer.cs">
+      <DependentUpon>CarryOutDocNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgingDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgingDetail.Designer.cs">
+      <DependentUpon>AgingDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintBarCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintBarCode.Designer.cs">
+      <DependentUpon>PrintBarCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SCRAP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SCRAP.Designer.cs">
+      <DependentUpon>SCRAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Progress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Progress.designer.cs">
+      <DependentUpon>Progress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LINE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LINE.Designer.cs">
+      <DependentUpon>LINE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GICJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GICJ.Designer.cs">
+      <DependentUpon>GICJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GRCJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GRCJ.Designer.cs">
+      <DependentUpon>GRCJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GIEJH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GIEJH.Designer.cs">
+      <DependentUpon>GIEJH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GREJH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GREJH.Designer.cs">
+      <DependentUpon>GREJH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Frame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frame.Designer.cs">
+      <DependentUpon>Frame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventoryDetail.Designer.cs">
+      <DependentUpon>InventoryDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TonerOutSheet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TonerOutSheet.Designer.cs">
+      <DependentUpon>TonerOutSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TonerDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TonerDetail.Designer.cs">
+      <DependentUpon>TonerDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TonerGlobal.cs" />
+    <Compile Include="TonerAging.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TonerAging.Designer.cs">
+      <DependentUpon>TonerAging.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TonerMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TonerMaster.Designer.cs">
+      <DependentUpon>TonerMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trend.Designer.cs">
+      <DependentUpon>Trend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WhereIsToner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WhereIsToner.Designer.cs">
+      <DependentUpon>WhereIsToner.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BatchScrap.resx">
+      <DependentUpon>BatchScrap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppendScan.resx">
+      <DependentUpon>AppendScan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarryOutDocNo.resx">
+      <DependentUpon>CarryOutDocNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgingDetail.resx">
+      <DependentUpon>AgingDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintBarCode.resx">
+      <DependentUpon>PrintBarCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCRAP.resx">
+      <DependentUpon>SCRAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Progress.resx">
+      <DependentUpon>Progress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LINE.resx">
+      <DependentUpon>LINE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GICJ.resx">
+      <DependentUpon>GICJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GRCJ.resx">
+      <DependentUpon>GRCJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GIEJH.resx">
+      <DependentUpon>GIEJH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GREJH.resx">
+      <DependentUpon>GREJH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Frame.resx">
+      <DependentUpon>Frame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventoryDetail.resx">
+      <DependentUpon>InventoryDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TonerOutSheet.resx">
+      <DependentUpon>TonerOutSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TonerDetail.resx">
+      <DependentUpon>TonerDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TonerAging.resx">
+      <DependentUpon>TonerAging.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TonerMaster.resx">
+      <DependentUpon>TonerMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trend.resx">
+      <DependentUpon>Trend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WhereIsToner.resx">
+      <DependentUpon>WhereIsToner.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PaCsTools\PaCSTools.csproj">
+      <Project>{2ed73d9c-6ad9-4f49-8aed-605e2c765ad3}</Project>
+      <Name>PaCSTools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loading.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
