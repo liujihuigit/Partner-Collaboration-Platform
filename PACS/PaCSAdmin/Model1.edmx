@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="pacsModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="pacsModelStoreContainer">
+          <EntitySet Name="pacs_function" EntityType="pacsModel.Store.pacs_function" store:Type="Tables" store:Schema="pacs" store:Name="pacs_function">
+            <DefiningQuery>SELECT
+      `pacs_function`.`id`, 
+      `pacs_function`.`pid`, 
+      `pacs_function`.`name`, 
+      `pacs_function`.`controlid`, 
+      `pacs_function`.`lvl`, 
+      `pacs_function`.`createdate`, 
+      `pacs_function`.`createtime`, 
+      `pacs_function`.`createuser`, 
+      `pacs_function`.`updatedate`, 
+      `pacs_function`.`updatetime`, 
+      `pacs_function`.`updateuser`, 
+      `pacs_function`.`delflag`
+      FROM `pacs_function` AS `pacs_function`</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="pacs_log" EntityType="pacsModel.Store.pacs_log" store:Type="Tables" store:Schema="pacs" store:Name="pacs_log">
+            <DefiningQuery>SELECT
+      `pacs_log`.`log_type`, 
+      `pacs_log`.`create_date`, 
+      `pacs_log`.`create_time`, 
+      `pacs_log`.`create_ip`, 
+      `pacs_log`.`create_user`
+      FROM `pacs_log` AS `pacs_log`</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="pacs_role" EntityType="pacsModel.Store.pacs_role" store:Type="Tables" store:Schema="pacs" store:Name="pacs_role">
+            <DefiningQuery>SELECT
+      `pacs_role`.`id`, 
+      `pacs_role`.`name`, 
+      `pacs_role`.`remark`, 
+      `pacs_role`.`createdate`, 
+      `pacs_role`.`createtime`, 
+      `pacs_role`.`createuser`, 
+      `pacs_role`.`updatedate`, 
+      `pacs_role`.`updatetime`, 
+      `pacs_role`.`updateuser`, 
+      `pacs_role`.`delflag`
+      FROM `pacs_role` AS `pacs_role`</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="pacs_role_function" EntityType="pacsModel.Store.pacs_role_function" store:Type="Tables" store:Schema="pacs" store:Name="pacs_role_function">
+            <DefiningQuery>SELECT
+      `pacs_role_function`.`roleid`, 
+      `pacs_role_function`.`functionid`
+      FROM `pacs_role_function` AS `pacs_role_function`</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="pacs_user" EntityType="pacsModel.Store.pacs_user" store:Type="Tables" Schema="pacs" />
+        </EntityContainer>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“def.pacs.pacs_function”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="pacs_function">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="decimal" Nullable="false" />
+          <Property Name="pid" Type="decimal" />
+          <Property Name="name" Type="varchar" MaxLength="30" />
+          <Property Name="controlid" Type="varchar" MaxLength="150" />
+          <Property Name="lvl" Type="varchar" MaxLength="2" />
+          <Property Name="createdate" Type="varchar" MaxLength="8" />
+          <Property Name="createtime" Type="varchar" MaxLength="6" />
+          <Property Name="createuser" Type="varchar" MaxLength="20" />
+          <Property Name="updatedate" Type="varchar" MaxLength="8" />
+          <Property Name="updatetime" Type="varchar" MaxLength="6" />
+          <Property Name="updateuser" Type="varchar" MaxLength="20" />
+          <Property Name="delflag" Type="varchar" MaxLength="2" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“def.pacs.pacs_log”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="pacs_log">
+          <Key>
+            <PropertyRef Name="log_type" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="create_time" />
+            <PropertyRef Name="create_ip" />
+            <PropertyRef Name="create_user" />
+          </Key>
+          <Property Name="log_type" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="create_date" Type="varchar" Nullable="false" MaxLength="8" />
+          <Property Name="create_time" Type="varchar" Nullable="false" MaxLength="6" />
+          <Property Name="create_ip" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="create_user" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“def.pacs.pacs_role”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="pacs_role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="remark" Type="varchar" MaxLength="4000" />
+          <Property Name="createdate" Type="varchar" MaxLength="8" />
+          <Property Name="createtime" Type="varchar" MaxLength="6" />
+          <Property Name="createuser" Type="varchar" MaxLength="20" />
+          <Property Name="updatedate" Type="varchar" MaxLength="8" />
+          <Property Name="updatetime" Type="varchar" MaxLength="6" />
+          <Property Name="updateuser" Type="varchar" MaxLength="20" />
+          <Property Name="delflag" Type="varchar" MaxLength="2" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“def.pacs.pacs_role_function”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="pacs_role_function">
+          <Key>
+            <PropertyRef Name="roleid" />
+            <PropertyRef Name="functionid" />
+          </Key>
+          <Property Name="roleid" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="functionid" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="pacs_user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="decimal" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="fullname" Type="varchar" MaxLength="50" />
+          <Property Name="sex" Type="varchar" MaxLength="10" />
+          <Property Name="identityno" Type="varchar" MaxLength="30" />
+          <Property Name="mail" Type="varchar" MaxLength="50" />
+          <Property Name="phone" Type="varchar" MaxLength="30" />
+          <Property Name="deptid" Type="varchar" MaxLength="20" />
+          <Property Name="deptname" Type="varchar" MaxLength="50" />
+          <Property Name="venderid" Type="varchar" MaxLength="50" />
+          <Property Name="vendername" Type="varchar" MaxLength="50" />
+          <Property Name="ischecked" Type="varchar" MaxLength="10" />
+          <Property Name="remark" Type="varchar" MaxLength="100" />
+          <Property Name="createdate" Type="varchar" MaxLength="20" />
+          <Property Name="createtime" Type="varchar" MaxLength="20" />
+          <Property Name="createuser" Type="varchar" MaxLength="20" />
+          <Property Name="updatedate" Type="varchar" MaxLength="20" />
+          <Property Name="updatetime" Type="varchar" MaxLength="20" />
+          <Property Name="updateuser" Type="varchar" MaxLength="20" />
+          <Property Name="delflag" Type="varchar" MaxLength="2" />
+          <Property Name="ip" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6013: 表/视图“def.pacs.pacs_user_role”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+      
+      <EntityType Name="pacs_user_role">
+        <Property Name="userid" Type="varchar" MaxLength="20" />
+        <Property Name="roleid" Type="varchar" MaxLength="20" />
+      </EntityType>-->
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="pacsModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="pacsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="pacs_function" EntityType="pacsModel.pacs_function" />
+          <EntitySet Name="pacs_log" EntityType="pacsModel.pacs_log" />
+          <EntitySet Name="pacs_role" EntityType="pacsModel.pacs_role" />
+          <EntitySet Name="pacs_role_function" EntityType="pacsModel.pacs_role_function" />
+          <EntitySet Name="pacs_user" EntityType="pacsModel.pacs_user" />
+        </EntityContainer>
+        <EntityType Name="pacs_function">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Decimal" Nullable="false" />
+          <Property Name="pid" Type="Decimal" />
+          <Property Name="name" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="controlid" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="lvl" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="createdate" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="createtime" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="createuser" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="updatedate" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="updatetime" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="updateuser" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="delflag" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="pacs_log">
+          <Key>
+            <PropertyRef Name="log_type" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="create_time" />
+            <PropertyRef Name="create_ip" />
+            <PropertyRef Name="create_user" />
+          </Key>
+          <Property Name="log_type" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="create_date" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="create_time" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="create_ip" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="create_user" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="pacs_role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="remark" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <Property Name="createdate" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="createtime" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="createuser" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="updatedate" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="updatetime" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="updateuser" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="delflag" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="pacs_role_function">
+          <Key>
+            <PropertyRef Name="roleid" />
+            <PropertyRef Name="functionid" />
+          </Key>
+          <Property Name="roleid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="functionid" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="pacs_user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Decimal" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="password" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="fullname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="sex" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="identityno" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="mail" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="phone" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="deptid" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="deptname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="venderid" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="vendername" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ischecked" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="remark" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="createdate" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="createtime" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="createuser" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="updatedate" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="updatetime" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="updateuser" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="delflag" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="ip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="pacsModelStoreContainer" CdmEntityContainer="pacsEntities">
+          <EntitySetMapping Name="pacs_function">
+            <EntityTypeMapping TypeName="pacsModel.pacs_function">
+              <MappingFragment StoreEntitySet="pacs_function">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="controlid" ColumnName="controlid" />
+                <ScalarProperty Name="lvl" ColumnName="lvl" />
+                <ScalarProperty Name="createdate" ColumnName="createdate" />
+                <ScalarProperty Name="createtime" ColumnName="createtime" />
+                <ScalarProperty Name="createuser" ColumnName="createuser" />
+                <ScalarProperty Name="updatedate" ColumnName="updatedate" />
+                <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+                <ScalarProperty Name="updateuser" ColumnName="updateuser" />
+                <ScalarProperty Name="delflag" ColumnName="delflag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pacs_log">
+            <EntityTypeMapping TypeName="pacsModel.pacs_log">
+              <MappingFragment StoreEntitySet="pacs_log">
+                <ScalarProperty Name="log_type" ColumnName="log_type" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="create_ip" ColumnName="create_ip" />
+                <ScalarProperty Name="create_user" ColumnName="create_user" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pacs_role">
+            <EntityTypeMapping TypeName="pacsModel.pacs_role">
+              <MappingFragment StoreEntitySet="pacs_role">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="createdate" ColumnName="createdate" />
+                <ScalarProperty Name="createtime" ColumnName="createtime" />
+                <ScalarProperty Name="createuser" ColumnName="createuser" />
+                <ScalarProperty Name="updatedate" ColumnName="updatedate" />
+                <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+                <ScalarProperty Name="updateuser" ColumnName="updateuser" />
+                <ScalarProperty Name="delflag" ColumnName="delflag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pacs_role_function">
+            <EntityTypeMapping TypeName="pacsModel.pacs_role_function">
+              <MappingFragment StoreEntitySet="pacs_role_function">
+                <ScalarProperty Name="roleid" ColumnName="roleid" />
+                <ScalarProperty Name="functionid" ColumnName="functionid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pacs_user">
+            <EntityTypeMapping TypeName="pacsModel.pacs_user">
+              <MappingFragment StoreEntitySet="pacs_user">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="identityno" ColumnName="identityno" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="deptid" ColumnName="deptid" />
+                <ScalarProperty Name="deptname" ColumnName="deptname" />
+                <ScalarProperty Name="venderid" ColumnName="venderid" />
+                <ScalarProperty Name="vendername" ColumnName="vendername" />
+                <ScalarProperty Name="ischecked" ColumnName="ischecked" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="createdate" ColumnName="createdate" />
+                <ScalarProperty Name="createtime" ColumnName="createtime" />
+                <ScalarProperty Name="createuser" ColumnName="createuser" />
+                <ScalarProperty Name="updatedate" ColumnName="updatedate" />
+                <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+                <ScalarProperty Name="updateuser" ColumnName="updateuser" />
+                <ScalarProperty Name="delflag" ColumnName="delflag" />
+                <ScalarProperty Name="ip" ColumnName="ip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
