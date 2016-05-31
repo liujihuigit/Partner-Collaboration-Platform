@@ -1,4 +1,4 @@
-﻿using MySQLDriverCS;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -8,28 +8,28 @@ using System.Text;
 
 namespace PaCS.Tools
 {
-    class ConnForMySQL
+    class MySqlHelper
     {
-
-        private static string server = ConfigurationManager.ConnectionStrings[server].ConnectionString;
-        private static string database = ConfigurationManager.ConnectionStrings[database].ConnectionString;
-        private static string login = ConfigurationManager.ConnectionStrings[login].ConnectionString;
-        private static string password = ConfigurationManager.ConnectionStrings[password].ConnectionString;
-
-
-        public static int ExecuteNoQuery(String sql,MySQLParameter[] parameters)
+        private static string connString = ConfigurationManager.ConnectionStrings["PaCS.Properties.Settings.pacsConnectionString"].ConnectionString;
+       
+        private static string server = ConfigurationManager.ConnectionStrings["server"].ConnectionString;
+        private static string database = ConfigurationManager.ConnectionStrings["database"].ConnectionString;
+        private static string login = ConfigurationManager.ConnectionStrings["login"].ConnectionString;
+        private static string password = ConfigurationManager.ConnectionStrings["password"].ConnectionString;
+        
+        public static int ExecuteNoQuery(String sql,MySqlParameter[] parameters)
         {
 
-            using (MySQLConnection conn = new MySQLConnection(new MySQLConnectionString(server, database, login, password).AsString))
+            using (MySqlConnection conn = new MySqlConnection(connString))
             {
 
                 conn.Open();
 
                 //防止乱码
-                MySQLCommand commn = new MySQLCommand("set names gb2312", conn);
+                MySqlCommand commn = new MySqlCommand("set names gb2312", conn);
                 commn.ExecuteNonQuery();
-                //连接语句和SQL
-                MySQLCommand cmd = new MySQLCommand(sql, conn);
+                //连接语句和Sql
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
                 //添加参数
                 cmd.Parameters.AddRange( parameters);
                 //返回执行结果
@@ -39,18 +39,18 @@ namespace PaCS.Tools
         
         }
 
-        public static object ExecuteScalar(String sql, MySQLParameter[] parameters)
+        public static object ExecuteScalar(String sql, MySqlParameter[] parameters)
         {
 
-            using (MySQLConnection conn = new MySQLConnection(new MySQLConnectionString(server, database, login, password).AsString))
+            using (MySqlConnection conn = new MySqlConnection(connString))
             {
 
                 conn.Open();
                 //防止乱码
-                MySQLCommand commn = new MySQLCommand("set names gb2312", conn);
+                MySqlCommand commn = new MySqlCommand("set names gb2312", conn);
                 commn.ExecuteNonQuery();
 
-                MySQLCommand cmd = new MySQLCommand(sql, conn);
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
                 //添加参数
                 cmd.Parameters.AddRange(parameters);
                 
@@ -60,22 +60,22 @@ namespace PaCS.Tools
         }
 
         //较少的时候
-        public static DataTable ExecuteReaderEx(String sql, MySQLParameter[] parameters)
+        public static DataTable ExecuteDataTable(String sql, MySqlParameter[] parameters)
         {
 
-            using (MySQLConnection conn = new MySQLConnection(new MySQLConnectionString(server, database, login, password).AsString))
+            using (MySqlConnection conn = new MySqlConnection(connString))
             {
 
                 conn.Open();
                 //防止乱码
-                MySQLCommand commn = new MySQLCommand("set names gb2312", conn);
-                commn.ExecuteNonQuery();
+                //MySqlCommand commn = new MySqlCommand("set names gb2312", conn);
+                //commn.ExecuteNonQuery();
 
-                MySQLCommand cmd = new MySQLCommand(sql, conn);
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
                 //添加参数
                 cmd.Parameters.AddRange(parameters);
 
-                MySQLDataAdapter mda = new MySQLDataAdapter(cmd);
+                MySqlDataAdapter mda = new MySqlDataAdapter(cmd);
 
                 //查询出的数据是存在DataTable中的，DataTable可以理解成为一个虚拟的表，DataTable中的一行为一条记录，一列为一个数据库字段  
 
@@ -88,23 +88,23 @@ namespace PaCS.Tools
 
         }
 
-        public static DataSet ExecuteReaderEx2(String sql, MySQLParameter[] parameters)
+        public static DataSet ExecuteDataSet(String sql, MySqlParameter[] parameters)
         {
 
 
-            using (MySQLConnection conn = new MySQLConnection(new MySQLConnectionString(server, database, login, password).AsString))
+            using (MySqlConnection conn = new MySqlConnection(connString))
             {
 
                 conn.Open();
                 //防止乱码
-                MySQLCommand commn = new MySQLCommand("set names gb2312", conn);
+                MySqlCommand commn = new MySqlCommand("set names gb2312", conn);
                 commn.ExecuteNonQuery();
 
-                MySQLCommand cmd = new MySQLCommand(sql, conn);
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
                 //添加参数
                 cmd.Parameters.AddRange(parameters);
 
-                MySQLDataAdapter mda = new MySQLDataAdapter(cmd);
+                MySqlDataAdapter mda = new MySqlDataAdapter(cmd);
 
                 //查询出的数据是存在DataTable中的，DataTable可以理解成为一个虚拟的表，DataTable中的一行为一条记录，一列为一个数据库字段  
 

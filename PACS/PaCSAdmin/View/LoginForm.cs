@@ -14,6 +14,7 @@ namespace PaCS
     public partial class LoginForm : XtraForm
     {
         private LoginPresenter lp = null;
+        private MySqlLoginPresenter mlp = null;
 
         public LoginForm()
         {
@@ -25,6 +26,7 @@ namespace PaCS
             try
             {
                 lp = new LoginPresenter();
+                mlp = new MySqlLoginPresenter();
                 toggleSwitch1.IsOn = lp.GetFactoryByIP();
             }
             catch (Exception)
@@ -77,7 +79,7 @@ namespace PaCS
                 user.Name = name;
                 user.Password = pwd;
 
-                User verfiedUser = lp.VerifyUser(user);//验证后信息
+                User verfiedUser = mlp.VerifyUser(user);//验证后信息
                 if (!string.IsNullOrEmpty(verfiedUser.Id))
                 {
                     if (verfiedUser.UserType.Equals("Admin"))
