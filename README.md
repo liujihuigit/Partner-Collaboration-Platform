@@ -1,4 +1,4 @@
-# PACS
+# partner collaboration platform
 个人C/S架构管理系统平台
 
 Login
